@@ -14,15 +14,13 @@ def function(rounds, x):
         ex = x/2
         if (x % 2) == 1:
             ex1 = int(round(ex)+1)
-            ex2 = int(round(ex))
-            # print(ex1, " ", ex2)
+            ex2 = int(round(ex))  
             fe1 = f ** ex1
             fe2 = f ** ex2
             fm1 = fe1 % 15
             fm2 = fe2 % 15
             fmnext = fm1 * fm2
             fmdone = fmnext % 15
-            # print(fmdone)
             return fmdone
         else:
             fe1 = f ** ex
@@ -31,7 +29,6 @@ def function(rounds, x):
             fm2 = fe2 % 15
             fmnext = fm1 * fm2
             fmdone = fmnext % 15
-            # print(fmdone)
             return fmdone
 
 
@@ -90,9 +87,6 @@ def feistel_decrypt():
     f1int = int(f1)
     f1bin = decitobin(f1int)
     print("            F2=", decitobin(int(f1)))
-
-    # nf1 = str(decitobin(if1))
-    # print(f1bin, " ", left)
     r2 = xor(f1bin, l1)
     l2 = r1
     print("L2=", l2, "   R2=", r2)
@@ -115,9 +109,6 @@ def feistel_encrypt():
     f1int = int(f1)
     f1bin = decitobin(f1int)
     print("            F1=", decitobin(int(f1)))
-
-    # nf1 = str(decitobin(if1))
-    # print(f1bin, " ", left)
     r1 = xor(f1bin, l0)
     l1 = r0
     print("L1=", l1, "   R1=", r1)
@@ -127,9 +118,6 @@ def feistel_encrypt():
     f2int = int(f2)
     f2bin = decitobin(f2int)
     print("            F2=", decitobin(int(f2)))
-
-    # nf1 = str(decitobin(if1))
-    # print(f1bin, " ", left)
     r2 = xor(f2bin, l1)
     l2 = r1
     print("L2=", l2, "   R2=", r2)
@@ -139,11 +127,6 @@ def feistel_encrypt():
 
 
 def main():
-    plaintext = '00101000'
-
-    # print(bintodeci(right))
-    # function(1, bintodeci(right))
-    # deci = deciToBin(5)
     inMenu = 1
     while inMenu == 1:
         print("0. Exit")
